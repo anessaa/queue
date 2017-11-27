@@ -11,6 +11,7 @@
       <a class="center btn btn-success" href="/quizzes/new">Create a Quiz</a>
     </h1>
   <% } %>
+<<<<<<< HEAD
 <div class="row">
   <% quizzes.forEach((quiz) => { %>
     <% var questionNum = 0 %>
@@ -18,26 +19,43 @@
       <div class="card-block">
         <h4 class="card-title center"><span class="student-header"><%= quiz.name %></span></h4>
         <% quiz.questions.forEach((question) => { %>
+=======
+  <div class="row">
+    <% quizzes.forEach((quiz) => { %>
+      <% var questionNum = 0 %>
+      <div class="col-sm-3 quiz-card text-center">
+        <div class="card-block">
+          <h4 class="card-title center"><span class="student-header"><%= quiz.name %></span></h4>
+          <% quiz.questions.forEach((question) => { %>
+>>>>>>> b942ba2419b3e3cb1ff59dfca38c3932bbb53cdc
           <% questionNum++; %>
-        <% }) %>
-        <p class="card-text margin-small">
-          <%= questionNum %> questions
-        </p>
-          <div class="quiz-index">
-            <a href="/quizzes/<%= quiz.id %>" class="col col-lg-3"><button class="btn btn-success">Show</button></a>
-            <% if (currentUser && currentUser.instructor) { %> 
-              <div class="quiz-delete-button"> 
-                <form action="/quizzes/<%= quiz.id %>?_method=DELETE" method="POST">
-                  <input class="center-inline btn btn-danger" type="submit" value="Delete">
-                </form>
-              </div>
-            <% } %>
+    <% }) %>
+      <p class="card-text margin-small">
+        <%= questionNum %> questions
+      </p>
+      <div class="quiz-index">
+        <a href="/quizzes/<%= quiz.id %>" class="col col-lg-3"><button class="btn btn-success">Show</button></a>
+        <% if (currentUser && currentUser.instructor) { %> 
+          <div class="quiz-delete-button"> 
+            <form action="/quizzes/<%= quiz.id %>?_method=DELETE" method="POST">
+              <input class="center-inline btn btn-danger" type="submit" value="Delete">
+            </form>
           </div>
+<<<<<<< HEAD
       </div>
     </div>
   <% }) %>
 </div>  
     <br>
 </main>
+=======
+        <% } %>
+        </div>
+      </div> 
+    </div>  
+  <% }) %> 
+  </div>
+  <br>
+  </main>
+>>>>>>> b942ba2419b3e3cb1ff59dfca38c3932bbb53cdc
           
-    
